@@ -1,5 +1,6 @@
 /*
-  Do not change the line below. If you'd like to run code from this file, you may use the `exampleSongData` variable below to gain access to tickets data. This data is pulled from the `data/songs.js` file.
+  Do not change the line below. If you'd like to run code from this file, you may use the `exampleSongData` variable below to gain
+  access to tickets data. This data is pulled from the `data/songs.js` file.
 
   You may use this data to test your functions. You may assume the shape of the data remains the same but that the values may change.
 
@@ -13,21 +14,36 @@ const exampleSongData = require("../data/songs");
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object} A single object.
  */
-function findPinkElephantsByTimestreet(songs) {}
+function findPinkElephantsByTimestreet(songs) {
+  return songs.find(({ title }) => title === "Pink Elephants");
+  //const result = songs.find(({ title }) => title === "Pink Elephants");
+  //console.log(result);
+  //return result
+}
 
 /**
  * Returns the first song in the list that is under three minutes.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object} A single object.
  */
-function findFirstSongUnderThreeMinutes(songs) {}
+function findFirstSongUnderThreeMinutes(songs) {
+  return songs.find(song  => song.runtimeInSeconds < 180);
+  //const result = songs.find(song  => song.runtimeInSeconds < 180);
+  //console.log (result);
+  //return result
+}
 
 /**
  * Returns the first song in the list where the song title equals the song album.
  * @param {Object[]} songs - An array of songs. See the song data for more.
  * @returns {Object} A single object.
  */
-function findFirstTitleTrack(songs) {}
+function findFirstTitleTrack(songs) {
+ return songs.find(song => song.title === song.album);
+  //const result = songs.find(song => song.title === song.album);
+  //console.log (result);
+  //return result
+}
 
 module.exports = {
   findPinkElephantsByTimestreet,
